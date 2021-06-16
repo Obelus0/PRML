@@ -42,17 +42,17 @@ class polynomial_regression:
         """
       Attributes
       ----------
-        D : int
-          An integer representing the degree of complexity of regression
+            D : int
+                An integer representing the degree of complexity of regression
 
-        regularization : str
-          a string that determines the type of regularization
+            regularization : str
+                a string that determines the type of regularization
 
-        lambda_ : float
-          A floating point integer hyperparameter used to reduce overfitting
+            lambda_ : float
+                A floating point integer hyperparameter used to reduce overfitting
 
-        sample_size : int
-          An integer used to specify the number of data samples to be taken to perform regressionParameters
+            sample_size : int
+                An integer used to specify the number of data samples to be taken to perform regressionParameters
         """
         self.regularization = regularization
         self.D = D
@@ -76,11 +76,11 @@ class polynomial_regression:
 
     def calculate_weights(self,design_matrix,Y):
         """
-            Attributes
-            ----------
-              design_matrix : float array
+        Attributes
+        ----------
+            design_matrix : float array
                     design_matrix as computed by float array
-              Y : float array
+            Y : float array
                     Output training data
         """
         # L2 Regularisation #
@@ -100,11 +100,11 @@ class polynomial_regression:
 
     def train(self,X,Y):
         """
-            Attributes
-            ----------
-                X : float array
+        Attributes
+        ----------
+            X : float array
                        Input training data
-                Y : float array
+            Y : float array
                        Output training data
         """
         design_matrix = self.design_matrix(X)
@@ -113,11 +113,11 @@ class polynomial_regression:
 
     def make_prediction(self,X,weights):
         """
-            Attributes
-            ----------
-                X : float array
+        Attributes
+        ----------
+            X : float array
                         Input training data
-                weights : float array
+            weights : float array
                         weights of the basis functions
         """
         design_matrix = self.design_matrix(X)
@@ -125,13 +125,13 @@ class polynomial_regression:
 
     def plot(self, y_true, y_pred, x):
         """
-             Attributes
-             ----------
-                y_true : float array
+        Attributes
+        ----------
+            y_true : float array
                         Output test data
-                y_pred : float array
+            y_pred : float array
                         predicted output
-                x   : float arrau
+            x   : float array
                         Input test data
         """
         # Scatter plot of y_true vs y_pred

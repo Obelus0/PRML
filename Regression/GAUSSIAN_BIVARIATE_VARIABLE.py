@@ -102,7 +102,6 @@ class gaussian_regression:
                 np.transpose(design_matrix))
             return np.dot(pseudo_inv, Y)
 
-
     def train(self,X,Y):
 
         means = self.K_clustering(X)

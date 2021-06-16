@@ -1,6 +1,6 @@
 """
     Polynomial Curve Fitting
-    Dataset - function0.csv
+    Dataset - Dataset1.csv
     Single variable input
 """
 import pandas as pd

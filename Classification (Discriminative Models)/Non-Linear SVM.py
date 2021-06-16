@@ -24,7 +24,6 @@ cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#00AAFF','#FE74D5'])
 cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#4333FF' , '#7C2C64'])
 cmap_SV= ListedColormap(['#F8FF12','#FF0000','#F8FF12','#F8FF12'])
 
-
 #importing the dataset
 def read_data(path,i=1,j=2):
     """
@@ -41,12 +40,6 @@ def read_data(path,i=1,j=2):
     test = test.astype({'x1': 'float64', 'x2': 'float64', 'y': 'int32'})
     test.columns = ['x1', 'x2', 'y']
     return train,test
-
-train, test = read_data(path)
-X =train.iloc[:,:-1].values
-y = train.iloc[:,-1].values
-X_test= test.iloc[:,:-1].values
-y_test = test.iloc[:,-1].values
 
 def show_classification_areas(X,Y):
         """
@@ -104,12 +97,22 @@ def confusion_plot(y_true, y_pred):
         ax.set_title('Confusion Matrix for Model ', fontsize=20, pad=20)
         plt.show()
 
+# Obtaining data
+train, test = read_data(path)
+X =train.iloc[:,:-1].values
+y = train.iloc[:,-1].values
+X_test= test.iloc[:,:-1].values
+y_test = test.iloc[:,-1].values
 
 #for polynomial kernel just change rbf to poly
 rbf = svm.SVC(kernel='poly',degree=2, gamma=0.1, C=0.1, decision_function_shape='ovr')
 X_train, X_validation, y_train, y_validation = train_test_split(X, y, test_size=0.15, random_state=42)
 rbf.fit(X_train, y_train)
 yhat= rbf.predict(X_test)
+
+"""
+Displaying the confusion plot & the classification areas
+"""
 show_classification_areas(X_train,y_train)
 print(confusion_plot(y_true=y_test,y_pred=yhat))
 print(rbf.score(X_test,y_test))
@@ -126,7 +129,6 @@ print(classification_report(y_validation, ytune))
 """
 Performing Grid Search to find best parameters
 """
-#
 # param_grid = {'C': [0.1,1],
 #               'gamma': [0.1, 0.01,1,10],
 #               'degree': [1,2,3,5,15]}
@@ -151,7 +153,3 @@ Performing Grid Search to find best parameters
 #
 # # print classification report
 # print(classification_report(y_test, grid_predictions))
-
-
-
-

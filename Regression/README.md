@@ -7,5 +7,4 @@ Task 3: Linear model for regression using Gaussian basis functions for Bivariate
 
 Implemented L2 & Tikhonov Regularisation for all.  <p> K-Fold Cross Validation to determine best model. </p>
 
-# Report
-Contains the conclusions of the performance of the models
+

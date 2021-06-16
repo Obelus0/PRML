@@ -5,9 +5,7 @@ Task 2: Linear model for regression using polynomial basis functions for Bivaria
 
 Task 3: Linear model for regression using Gaussian basis functions for Bivariate & Multivariate Dataset
 
-Implemented L2 & Tikhonov Regularisation for all.
-
-K-Fold Cross Validation to determine best model.
+Implemented L2 & Tikhonov Regularisation for all.   K-Fold Cross Validation to determine best model.
 
 # Report
 Contains the conclusions of the performance of the models
